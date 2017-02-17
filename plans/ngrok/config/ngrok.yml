@@ -1,0 +1,4 @@
+web_addr: {{cfg.ngrok.portal_addr}}
+update: {{cfg.ngrok.update}}
+log: {{cfg.ngrok.log}}
+authtoken: {{cfg.ngrok.authtoken}}

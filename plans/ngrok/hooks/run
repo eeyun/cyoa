@@ -1,0 +1,5 @@
+#!/bin/bash -xe
+#
+exec 2>&1
+
+exec ngrok {{cfg.ngrok.tunnel_type}} -subdomain={{cfg.ngrok.subdomain}} --config {{pkg.svc_config_path}}/ngrok.yml {{cfg.ngrok.host}}:{{cfg.ngrok.port}}

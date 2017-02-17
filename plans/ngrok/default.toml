@@ -1,0 +1,10 @@
+[ngrok]
+port = '80'
+tunnel_type = 'http'
+authtoken = 'ngrok authtoken here'
+service_host = 'localhost'
+portal_addr = '0.0.0.0:4040'
+update = 'false'
+log = 'stdout'
+# subdomain should be used if you have access to the authtoken connected with that subdomain
+subdomain= 'habitat'

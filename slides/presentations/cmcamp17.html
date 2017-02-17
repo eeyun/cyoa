@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Habitat CYOA Workshop</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="/static/css/reveal.css">
+        <link rel="stylesheet" href="/static/css/default.css" id="theme">
+        <link rel="stylesheet" href="/static/css/zenburn.css">
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+      <div class="reveal">
+        <div class="slides">
+                <!-- Use external markdown resource, separate slides by 2 dashes and an h; vertical slides by two dashes and a v -->
+		              <section data-background-image="/static/img/bg.jpg">
+		              </section>
+                    <section data-background-image="/static/img/bg.jpg" style="text-align: left;">
+                      <h2>Upside Down</h2>
+                      <h1>Application Automation</h1>
+                      <p>Ian J Henry | Habitat Community Lead</p>
+                      <p>@eeyun___ | eeyun on GitHub</p>
+                      </font>
+                      <img width="178" height="86" data-src="/static/img/logo.png" style="float: left; background:none; border:none; box-shadow:none;">
+                    </section>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <div>
+                    <img data-src="/static/img/logo.png" style="background:none; border:none;">
+                  </div>
+                    Err.. what is it?
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <h2> How many of you have heard of Habitat before today? </h2>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <img data-src="/static/img/cmcamp_stack.png">
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                      <div>
+                          <h3>Text "yes" or "no" to</h2>
+                          <h2>1.646.490.0192</h1>
+                          habitat.ngrok.io/cmcamp17/vote/hab
+                      </div>
+                      <br>
+                      <div style="display: inline;">
+                          <div style="float: left;">
+                              <h2>Totally!</h2>
+                              <h2><div id="yes">0</div> votes</h2>
+                          </div>
+                          <div style="float: right;">
+                              <h2>No way!</h2>
+                              <h2><div id="no">0</div> votes</h2>
+                          </div>
+                      </div>
+                    </section>
+                <section data-background-image="/static/img/bg.jpg" data-transition="fade-out">
+                  <div>
+                    <img data-src="/static/img/logo.png" style="background:none; border:none;">
+                  </div>
+                  <div style="text-align: left;">
+                    Habitat is an open-source project that enables you to ship your application, to any platform, along with all the automation you'll need to manage it in production.
+                  </div>
+                </section>
+                <section data-background-image="/static/img/bg.jpg" data-transition="fade-in">
+                  <div>
+                    <img data-src="/static/img/logo.png" style="background:none; border:none;">
+                  </div>
+                  <h2> slack.habitat.sh </h2>
+                  <div>
+                    <img data-src="/static/img/slack.png" style="background:none; border:none;">
+                  </div>
+                </section>
+                <section data-background-image="/static/img/bg.jpg">
+                  <h2> Great! </h2>
+                  <br>
+                  <h3> Except... well that's sort of vague, wouldn't you say? </h3>
+                </section>
+                <section data-background-image="/static/img/bg.jpg">
+                  <h2> Kinda, yeah. So, how about we start our journey with a story?</h2>
+                </section>
+                <section data-background-image="/static/img/bg.jpg">
+                    <div>
+                        <h3>Text "yarp" or "narp" to</h2>
+                        <h2>1.646.490.0192</h1>
+                        habitat.ngrok.io/cmcamp17/vote/story
+                    </div>
+                    <br>
+                    <div style="display: inline;">
+                        <div style="float: left;">
+                            <h2><a href="#/9">Story time!</a></h2>
+                            <h2><div id="yarp">0</div> votes</h2>
+                        </div>
+                        <div style="float: right;">
+                            <h2><a href="#/9">Wtf? No.</a></h2>
+                            <h2><div id="narp">0</div> votes</h2>
+                        </div>
+                    </div>
+                  </section>
+                  <section>
+                    <section data-background-image="/static/img/bg.jpg">
+                      <h1> Just Kidding </h1>
+                      <h2> Democracy is a myth</h2>
+                      <br>
+                      <h3> We really do need to start with a story</h3>
+                      <div>
+                        <img width="125" height="125" data-src="/static/img/trollface.png" style="float: right; background:none; border:none; box-shadow:none;">
+                      <div>
+                    </section>
+                    <section data-background-image="/static/img/bg.jpg">
+                      <h1> Modern Apps <h1>
+                        <img data-src="/static/img/modern_apps.png">
+                    </section>
+                    <section data-background-image="/static/img/bottom_top.png">
+                    </section>
+                    <section data-background-image="/static/img/bg.jpg">
+                      <img data-src="/static/img/enterprise-app-lifecycle-squiggle.png">
+                    </section>
+                    <section data-background-image="/static/img/bg.jpg">
+                      <h3 text="align: left;"> Operable (Humane) Software </h3>
+                      <ul>
+                        <li> Isolated </li>
+                        <li> Immutable </li>
+                        <li> Atomic </li>
+                        <li> Configurable </li>
+                        <li> Common Interface for Health Checks </li>
+                        <li> Rebuilt from source </li>
+                        <li> Common Packaging </li>
+                        <li> Runtime Independence</li>
+                      </ul>
+                    </section>
+                    <section data-background-image="/static/img/top_bottom.png">
+                    </section>
+                    <section data-background-image="/static/img/bg.jpg">
+                      <img data-src="/static/img/why_hab.png">
+                    </section>
+                    <section data-background-image="/static/img/containers.jpg">
+                      <h1> Say hello </h1>
+                        <br><br>
+                        <h2 style="color: #000000; class: roll;">to my little Microservice</h2>
+                    </section>
+                    <section data-background-image="/static/img/cliff.jpg">
+                      <!-- https://static.pexels.com/photos/6744/nature-water-blue-cliff.jpg -->
+                        <h2>The Production Cliff</h2>
+                        <img src="/static/img/difficulty-curve-07.png" alt="Difficulty Curve"/>
+                      <aside class="notes">
+                        <ul>
+                          <li>Starts easy, gets a little harder</li>
+                          <li>Dip of False Mastery, non-linear</li>
+                          <li>Non-Linear</li>
+                          <li>More to deploy, more to configure</li>
+                          <li>Application Automation keeps the curve flat</li>
+                          <li>Lets show you how</li>
+                        </ul>
+                      </aside>
+                    </section>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <h1> Ok, so how does habitat solve that pain?</h1>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <h3> Great Question. Since I took entirely too long walking you through that story with so many damn slides and didn't give you a chance to skip past it we won't have enough time in our session to address ALL of the ways that habitat helps. So instead let's look at a few ways and we'll decide democratically.</h3>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <div class="solid fragment">
+                        <h1>Build</h1>
+                        <hr/>
+                        <h1>Deploy</h1>
+                        <hr/>
+                        <h1>Manage</h1>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                          <li>Free to take in both perspectives</li>
+                          <li>Fast, efficient, software driven</li>
+                          <li>Could would we Build, Deploy, Manage</li>
+                          <li>All the software, enterprise and cloud</li>
+                          <li>The same way?</li>
+                        </ul>
+                    </aside>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                      <div>
+                          <h2>Text "build" or "manage" to</h2>
+                          <h2>1.646.490.0192</h2>
+                          habitat.ngrok.io/cmcamp17/vote/build_manage
+                      </div>
+                      <br>
+                      <div style="display: inline;">
+                          <div style="float: left;">
+                              <h2><a href="#/15">Build</a></h2>
+                              <h2><div id="build">0</div> votes</h2>
+                          </div>
+                          <div style="float: right;">
+                              <h2><a href="#/16">Manage</a></h2>
+                              <h2><div id="manage">0</div> votes</h2>
+                          </div>
+                      </div>
+                    </section>
+                    <section>
+                      <section data-background-image="/static/img/bricks.jpg" data-transition="fade-out">
+                        <h1>Build</h1>
+                      </section>
+                      <section data-background-image="/static/img/bg.jpg" data-transition="fade-in">
+                        <h1 class="fragment fade-out">Starts with a plan</h1>
+                      </section>
+                      <section data-background-image="/static/img/bg.jpg" data-transition="fade-out">
+                        <h1 class="fragment fade-in" data-fragment-index="2">Simple</h1>
+                        <h1 class="fragment fade-in" data-fragment-index="3">Native</h1>
+                        <h1 class="fragment fade-in" data-fragment-index="4">declarative</h1>
+                      </section>
+                      <section data-background-video="/static/img/hab_plan_init.mp4" data-transition="fade-out" data-background-video-loop>
+                      </section>
+                      <section data-background-image="/static/img/plan.png" data-background-size="contain">
+                        <h2 class="fragment fade-in" data-fragment-index="2">Low Abstraction</h2>
+                        <h2 class="fragment fade-in" data-fragment-index="3">Complete Dependencies</h2>
+                        <h2 class="fragment fade-in" data-fragment-index="4">Simple Functions</h2>
+                      </section>
+                      <section data-background-image="/static/img/bg.jpg">
+                        <img src="/static/img/best_plan.jpg" />
+                      </section>
+                      <section data-background-image="/static/img/studio.jpg">
+                        <div>
+                          <h1>Studio</h1>
+                        </div>
+                        <div>
+                        <ul>
+                          <li><h2  class="fragment fade-in " data-fragment-index="2">Clean room Environment</h2></li>
+                          <li><h2  class="fragment fade-in" data-fragment-index="3">Safe and minimal by default</h2></li>
+                          <li><h2  class="fragment fade-in" data-fragment-index="4">Installs dependencies</h2></li>
+                        </ul>
+                        </div>
+                        <aside class="notes">
+                          <ul>
+                            <li>Only has what you need.</li>
+                            <li>Safe, completely auditable</li>
+                            <li>multiple types, customizable, flexible abstraction</li>
+                          </ul>
+                        </aside>
+                      </section>
+                      <section data-background-video="/static/img/hab_studio_enter_1.mp4" data-transition="fade-out" data-background-video-loop>
+                      </section>
+                      <section data-background-image="/static/img/bg.jpg">
+                        <h3> Continue exploring the build time or take a look at something else?</h3>
+                      </section>
+                      <section data-background-image="/static/img/bg.jpg">
+                          <div>
+                              <h2>Text "stay" or "leave" to</h2>
+                              <h2>1.646.490.0192</h2>
+                              habitat.ngrok.io/cmcamp17/vote/bored
+                          </div>
+                          <br>
+                          <div style="display: inline;">
+                              <div style="float: left;">
+                                  <h2><a href="#/14/10">Stay</a></h2>
+                                  <h2><div id="more">0</div> votes</h2>
+                              </div>
+                              <div style="float: right;">
+                                  <h2><a href="#/15">Leave</a></h2>
+                                  <h2><div id="less">0</div> votes</h2>
+                              </div>
+                          </div>
+                      </section>
+                      <section data-background-image="/static/img/depot.jpg">
+                        <div>
+                          <h1>Depot</h1>
+                        </div>
+                        <ul>
+                          <li><h2  class="fragment fade-in " data-fragment-index="1">Central Location</h2></li>
+                          <li><h2  class="fragment fade-in " data-fragment-index="2">Publicly Hosted</h2></li>
+                          <li><h2  class="fragment fade-in " data-fragment-index="3">Lightweight Views</h2></li>
+                          <li><h2  class="fragment fade-in " data-fragment-index="4">Public Build Service (soon)</h2></li>
+                        </ul>
+                      </section>
+                      <section data-background-image="/static/img/containers.jpg">
+                        <div>
+                          <h1>Post </h1>
+                          <h1>Processors</h1>
+                        </div>
+                        <div>
+                        <ul>
+                          <li><h2  class="fragment fade-in " data-fragment-index="1">Docker</h2></li>
+                          <li><h2  class="fragment fade-in " data-fragment-index="2">Aci</h2></li>
+                          <li><h2  class="fragment fade-in " data-fragment-index="3">Mesosphere</h2></li>
+                          <li><h2  class="fragment fade-in " data-fragment-index="4">Tarball!</h2></li>
+                        </ul>
+                      </div>
+                    </section>
+                    <section data-background-video="/static/img/hab_export_docker_1.mp4">
+                    </section>
+                </section>
+                <section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <h1> Manage</h1>
+                    <img data-src="/static/img/manage.jpg">
+                  </section>
+                  <section data-background="/static/img/bg.jpg">
+                    <h2>The `/results` of our efforts are a habitat artifact</h2>
+                    <pre><code style="align: left;">&lt;origin&gt;-&lt;package&gt;-&lt;version&gt;-&lt;build&gt;-&lt;arch&gt;-&lt;distro&gt;.hart
+results/core-cyoa-0.0.1-20170203094443-x86_64-linux.hart
+                   </code></pre>
+                  </section>
+                  <section data-background-video="/static/img/hab_help.mp4">
+                    <h1> Install with <br />`hab`</h1>
+                    <ul>
+                      <li><h2  class="fragment fade-in " data-fragment-index="1">Easy Pattern</h2></li>
+                      <li><h2  class="fragment fade-in " data-fragment-index="2">CLI Shortcuts</h2></li>
+                      <li><h2  class="fragment fade-in " data-fragment-index="3">Increasing Specificity</h2></li>
+                    </ul>
+                  </section>
+                  <section data-background-video="/static/img/hab_pkg_install.mp4" data-background-video-loop>
+                  </section>
+                  <section data-background-image="/static/img/disk.jpg">
+                    <h1>Packages on Disk</h1>
+                    <ul>
+                      <li><h2  class="fragment fade-in " data-fragment-index="1">Binaries and Config</h2></li>
+                      <li><h2  class="fragment fade-in " data-fragment-index="2">Metadata</h2></li>
+                      <li><h2  class="fragment fade-in " data-fragment-index="3">Side-by-side</h2></li>
+                    </ul>
+                  </section>
+                  <section data-background-image="/static/img/bg.jpg">
+                    <h1>Supervisor runs services</h1>
+                    <ul>
+                      <li><h3>Installs Automatically</h3></li>
+                      <li><h3>Keeps things running</h3></li>
+                      <li><h3>Manages Configuration</h3></li>
+                    </ul>
+                    <aside class="notes">
+                      <ul>
+                        <li>Installs packages</li>
+                        <li>Starts the service we've defined</li>
+                        <li>Manages the lifecycle</li>
+                      </ul>
+                    </aside>
+                  </section>
+                <section data-background-image="/static/img/gossip-ring.png">
+                  <div>
+                    <h1> Supervisors</h1>
+                    <h2> Self- Organize</h2>
+                  </div>
+
+                  <div style="float: right;">
+                    <ul>
+                      <li><h3>Peers</h2></li>
+                      <li><h3>Service Groups</h2></li>
+                      <li><h3>Gossip</h2></li>
+                      <li><h3>Availability increases with scale</h2></li>
+                    </ul>
+                  </div>
+                </section>
+                <section data-background-image="/static/img/bg.jpg">
+                  <h2>Supervisors provide REST API</h2>
+                  <ul>
+                    <li>External Actors</li>
+                    <li>Health and Status</li>
+                    <li>Supervisor Debugging</li>
+                  </ul>
+                </section>
+                <section data-background-video="/static/img/hab_butterfly.mp4">
+                </section>
+                <section data-background-image="/static/img/topologies.png">
+                  <div style="float: top; position: absolute;" class="image">
+                    <h2>Supervisors Understand Topologies</h2>
+                    <ul>
+                      <li>Dynamic Configuration</li>
+                      <li>Service group level</li>
+                      <li>uses the ring</li>
+                    </ul>
+                </div>
+                </section>
+                <section>
+
+                </section>
+                <section data-background-video="/static/img/docker_compose_view.mp4">
+                </section>
+                <section data-background-video="/static/img/docker_compose_up.mp4">
+                </section>
+                <section data-background-image="/static/img/update-strategies.png">
+                  <h2>Supervisors provide update strategies</h2>
+                  <ul>
+                    <li>Topology Aware</li>
+                    <li>Tracks Channels in Depot</li>
+                    <li>Ideal for Continuous Delivery</li>
+                  </ul>
+                </section>
+                <section data-background-video="/static/img/docker_compose_scale.mp4">
+                </section>
+              </section>
+              <section data-background-image="/static/img/bg.jpg">
+                <h1> Application</h1>
+                <h1> Automation</h1>
+                <h3>Automation travels with the application</h3>
+                <h3>Existing AND Cloud Native Software</h3>
+                <aside class="notes">
+                  <ul>
+                    <li>App automation come from the perspective of the application</li>
+                    <li>We don't rewrite the world to fix our management struggles</li>
+                  </ul>
+                </aside>
+              </section>
+            <section>
+              <img data-src="/static/img/logo.png" style="background:none; border:none;">
+              <h1> Hands-On </h1>
+              <h2> wednesday </h2>
+              <h2> 10:00 - 16:30 </h2>
+              <h3>Room B3.019
+            </section>
+        </div>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+        <script src="/static/js/head.min.js"></script>
+        <script src="/static/js/reveal.js"></script>
+
+        <script>
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+		width: 1024,
+		height: 768,
+                theme: Reveal.getQueryHash().theme,
+                transition: Reveal.getQueryHash().transition || 'default',
+                dependencies: [
+                        { src: '/static/plugin/markdown/marked.js' },
+                        { src: '/static/plugin/markdown/markdown.js' },
+                        { src: '/static/plugin/notes/notes.js', async: true },
+                        { src: '/static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+
+            $(document).ready(function() {
+                namespace = '/cyoa';
+                var socket = io.connect('http://' + document.domain + ':' + location.port + namespace);
+
+                /* add and edit choices here */
+                var appropriate_choices = ['done','more','yes','no'];
+
+                socket.on('msg', function(msg) {
+                    /* ensure valid vote and div exists */
+                    if (appropriate_choices.indexOf(msg.div) >= 0) {
+                        var checkDiv = $('#' + msg.div);
+                        if (checkDiv.length > 0) {
+                            checkDiv.html(msg.val);
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

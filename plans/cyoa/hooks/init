@@ -1,0 +1,9 @@
+#!/bin/bash -xe
+
+exec 2>&1
+
+ln -sf {{pkg.path}}/manage.py {{pkg.svc_var_path}}
+ln -sf {{pkg.path}}/cyoa {{pkg.svc_var_path}}
+ln -sf {{pkg.svc_files_path}}/presentations {{pkg.svc_var_path}}/cyoa/templates/
+ln -sf {{pkg.svc_files_path}}/video {{pkg.svc_var_path}}/cyoa/templates/
+ln -sf {{pkg.svc_files_path}}/img {{pkg.svc_var_path}}/cyoa/static/

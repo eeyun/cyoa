@@ -1,0 +1,37 @@
+version: '2'
+services:
+  postgresql:
+    image: core/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - HAB_POSTGRESQL=initdb_superuser_password='hab'
+  redis:
+    image: core/redis
+    links:
+      - postgresql
+      - cyoa
+    environment:
+        - HAB_REDIS=protected-mode='no'
+    command: start core/redis --peer postgresql --bind database:postgresql.default --topology leader
+  cyoa:
+    image: core/cyoa
+    volumes:
+      - ./slides:/hab/svc/cyoa/files
+    ports:
+      - "5001:5001"
+    links:
+      - postgresql
+    environment:
+      - HAB_CYOA=database={username='hab',password='hab'},twilio={sid='inputtwiliosidhere',token='inputtwiliotokenhere',number='+1XXXXXXXXXX'}
+    command: start core/cyoa --peer postgresql --bind database:postgresql.default --bind redis:redis.default
+  ngrok:
+    image: core/ngrok
+    links:
+      - cyoa
+    environment:
+      - HOME=/hab/svc/ngrok/var
+      - HAB_NGROK=ngrok={port='5001',host="cyoa",authtoken='ngrokauthtokenshouldgetinsertedhere',subdomain='yoursubdomain'}
+    ports:
+      - "4040:4040"
+    command: start core/ngrok --peer cyoa

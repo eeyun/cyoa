@@ -1,0 +1,18 @@
+[flask]
+debug = false
+key = "somerandomedigitshereithink"
+port = "5001"
+
+[database]
+username = "hab"
+password = "hab"
+
+[redis]
+ip = "0.0.0.0"
+port = "6379"
+database = "0"
+
+[twilio]
+sid = "atwiliosidshouldgetputhere"
+token = "atwiliotokenshouldgetputhere"
+number = "atwiliophonenumbershouldgetputhere"

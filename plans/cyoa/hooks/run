@@ -1,0 +1,30 @@
+#!/bin/bash -xe
+#
+exec 2>&1
+
+source "{{pkg.path}}/cyoa/runtime_environment.sh"
+source "{{pkg.svc_config_path}}/config.sh"
+
+cd {{pkg.svc_path}}
+
+PG_PASS={{cfg.database.password}}
+
+{{#if bind.has_database ~}}
+PG_HOST={{bind.database.members[0].sys.ip}}
+
+if PGPASSWORD=$PG_PASS psql -lqt -h $PG_HOST -U {{cfg.database.username}} | cut -d \| -f 1 | grep -qw cyoa; then
+    python "{{pkg.svc_var_path}}/manage.py" syncdb
+else
+    PGPASSWORD=$PG_PASS createdb cyoa -h $PG_HOST -U {{cfg.database.username}}
+    python "{{pkg.svc_var_path}}/manage.py" syncdb
+fi
+{{else ~}}
+exit 1
+{{/if ~}}
+
+if PGPASSWORD=$PG_PASS psql -h $PG_HOST -U {{cfg.database.username}} -d cyoa --command="SELECT * from wizards;" | cut -d \| -f 2 | grep hab; then
+    exec python "{{pkg.svc_var_path}}/manage.py" runserver
+else
+    python "{{pkg.svc_var_path}}/manage.py" create_wizard {{cfg.database.username}} {{cfg.database.password}}
+    exec python "{{pkg.svc_var_path}}/manage.py" runserver
+fi

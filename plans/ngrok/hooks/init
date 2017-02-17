@@ -1,0 +1,13 @@
+#!/bin/bash -xe
+#
+exec 2>&1
+
+#mkdir {{pkg.svc_var_path}}/.ngrok2
+
+#ln -s {{pkg.svc_config_path}}/ngrok.yml  {{pkg.svc_var_path}}/.ngrok2/
+
+{{#if cfg.ngrok.authtoken ~}}
+    exec ngrok authtoken {{cfg.ngrok.authtoken}}
+{{else~}}
+    exit 0
+{{/if~}}
